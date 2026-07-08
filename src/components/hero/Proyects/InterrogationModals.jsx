@@ -4,253 +4,176 @@ import { Modal } from "../../Modal.jsx/Modal";
 import { useModal } from "../../../hooks/useModal";
 import interrogationRight from "../../../assets/images/interrogationRight.png";
 import interrogationLeft from "../../../assets/images/interrogationLeft.png";
-import { FaRegPaperPlane } from "react-icons/fa";
-import { SlPlane } from "react-icons/sl";
-import { GiRocket, GiChainedHeart } from "react-icons/gi";
+
+const ProjectModal = ({ title, tags, paragraphs, repoUrl }) => (
+  <ModalContent>
+    <h2 className="modalTitle">{title}</h2>
+    <div className="tagRow">
+      {tags.map((t) => (
+        <span key={t} className="tag">{t}</span>
+      ))}
+    </div>
+    <div className="divider" />
+    <div className="bodyText">
+      {paragraphs.map((p, i) => (
+        <p key={i}>{p}</p>
+      ))}
+    </div>
+    {repoUrl && (
+      <a className="repoBtn" href={repoUrl} target="_blank" rel="noreferrer">
+        Ver en GitHub →
+      </a>
+    )}
+  </ModalContent>
+);
 
 export const InterrogationModalRight = () => {
   const [isOpenModal, openModal, closeModal] = useModal(false);
   return (
-    <Wrapper>
-      <div onClick={openModal}>
-        <div className="containerInterrogationOne">
-          <div className="containerImage">
-            <img src={interrogationRight} alt="interrogationRight" />
-          </div>
-          <div className="containerModal">
-            <Modal isOpen={isOpenModal} closeModal={closeModal}>
-              <h1> D i g i t i z e</h1>
-              <div className="containerText">
-                <div className="text">
-                  <h3>
-                    Digitize es un sitio web que desarrolle de manera grupal
-                    cuando tuve mi paso por la organización "No Country".{" "}
-                    <p>
-                      El objetivo de D i g i t i z e es que las empresas o
-                      emprendedores puedan adquirir los servicios tanto de
-                      desarrollo web como de marketing. Como podes observar en
-                      las tarjetas, Digitize te ofrece diferentes planes según
-                      tu necesidad o dimensión del proyecto.
-                    </p>
-                  </h3>
-                </div>
-              </div>
-            </Modal>
-          </div>
-        </div>
-      </div>
-    </Wrapper>
+    <Trigger onClick={openModal}>
+      <img src={interrogationRight} alt="Ver detalles" />
+      <Modal isOpen={isOpenModal} closeModal={closeModal}>
+        <ProjectModal
+          title="Digitize"
+          tags={["React", "Node.js", "No Country"]}
+          paragraphs={[
+            "Digitize es una plataforma de servicios digitales desarrollada de forma grupal durante mi paso por No Country, una organización que simula entornos laborales reales con metodología ágil.",
+            "El objetivo es que empresas y emprendedores puedan contratar servicios de desarrollo web y marketing. La plataforma presenta distintos planes según la necesidad o dimensión del proyecto.",
+            "Mi rol fue principalmente Frontend: desarrollé la interfaz de pricing y la landing de planes, trabajando en sprint semanales con un equipo de 4 personas.",
+          ]}
+          repoUrl="https://github.com/SchrohSantiago?tab=repositories"
+        />
+      </Modal>
+    </Trigger>
   );
 };
 
 export const InterrogationModalRightTwo = () => {
   const [isOpenModal, openModal, closeModal] = useModal(false);
   return (
-    <Wrapper>
-      <div onClick={openModal}>
-        <div className="containerInterrogationOne">
-          <div className="containerImage">
-            <img src={interrogationRight} alt="interrogationRight" />
-          </div>
-          <div className="containerModal">
-            <Modal isOpen={isOpenModal} closeModal={closeModal}>
-              <h1 className="ecoSportTitle"> Eco-Sport </h1>
-              <div className="containerText">
-                <div className="text">
-                  <h3>
-                    Eco-Sport al igual que Digitize lo realice en "No Country".
-                    {" "}
-                    <p>
-                      Eco-Sport es un E-commerce de ropa deportiva el cual
-                      cuenta con una gran variedad de funcionalidades, un diseño
-                      tanto Mobile como Desktop, formularios, login/register,
-                      proceso de pago, filtros de búsqueda, implementacion TOKEN y
-                      panel de administrador. Fue realizado en un periodo de 5
-                      semanas y entre 4 desarrolladores.
-                    </p>
-                  </h3>
-                </div>
-              </div>
-            </Modal>
-          </div>
-        </div>
-      </div>
-    </Wrapper>
+    <Trigger onClick={openModal}>
+      <img src={interrogationRight} alt="Ver detalles" />
+      <Modal isOpen={isOpenModal} closeModal={closeModal}>
+        <ProjectModal
+          title="Eco-Sport"
+          tags={["React", "Node.js", "JWT", "MySQL", "No Country"]}
+          paragraphs={[
+            "Eco-Sport es un e-commerce de ropa deportiva desarrollado en No Country en 5 semanas, por un equipo de 4 desarrolladores.",
+            "Cuenta con catálogo completo, filtros de búsqueda, carrito de compras, proceso de pago, autenticación con JWT (login/register), panel de administrador, y diseño responsive Mobile y Desktop.",
+            "Mi foco estuvo en la implementación del sistema de autenticación con JWT y las rutas protegidas del panel de administrador.",
+          ]}
+          repoUrl="https://github.com/SchrohSantiago?tab=repositories"
+        />
+      </Modal>
+    </Trigger>
   );
 };
 
 export const InterrogationModalLeft = () => {
   const [isOpenModal, openModal, closeModal] = useModal(false);
   return (
-    <WrapperLeft>
-      <div onClick={openModal}>
-        <div className="containerInterrogationOne">
-          <div className="containerImage">
-            <img src={interrogationLeft} alt="interrogationRight" />
-          </div>
-          <div className="containerModal">
-            <Modal isOpen={isOpenModal} closeModal={closeModal}>
-              <h1 className="climaTitle"> App Clima 2.0 </h1>
-              <div className="containerText">
-                <div className="text">
-                  <h3 className="textoClima">
-                    App Clima 2.0 fue mi primer proyecto.{" "}
-                    <p>
-                      Verdaderamente, si bien es un proyecto muy simple a
-                      comparación de los demás, fue aquel que más me costo
-                      realizar, porque con esta app rompí la barrera entre la
-                      practica y la teoría, ya estaba creando algo y al tener
-                      unas funcionalidades básicas decidí que me esforzaría
-                      mucho por el diseño. Allí fue cuando me di cuenta de la
-                      importancia de brindar una buena experiencia al Usuario.
-                    </p>
-                  </h3>
-                </div>
-              </div>
-            </Modal>
-          </div>
-        </div>
-      </div>
-    </WrapperLeft>
+    <Trigger onClick={openModal}>
+      <img src={interrogationLeft} alt="Ver detalles" />
+      <Modal isOpen={isOpenModal} closeModal={closeModal}>
+        <ProjectModal
+          title="App Clima 2.0"
+          tags={["JavaScript", "CSS", "OpenWeather API"]}
+          paragraphs={[
+            "App Clima 2.0 fue mi primer proyecto personal: una app del tiempo que consume la API de OpenWeatherMap en tiempo real.",
+            "Aunque técnicamente simple, fue el proyecto que me hizo romper la barrera entre la teoría y la práctica. Cuando lo tuve funcionando, decidí invertir en el diseño y la UX —y ahí descubrí lo importante que es la experiencia del usuario.",
+            "Incluye búsqueda por ciudad, temperatura en tiempo real, íconos dinámicos según el clima y diseño completamente personalizado.",
+          ]}
+          repoUrl="https://github.com/SchrohSantiago?tab=repositories"
+        />
+      </Modal>
+    </Trigger>
   );
 };
 
-const Wrapper = styled.div`
-  a {
-    color: white;
-    transition: 500ms;
-    font-weight: 300;
-  }
-  h3 {
-    font-family: "DM Sans";
-    font-weight: 200;
-    text-align: left;
-    line-height: 22px;
-    font-size: 19px;
-  }
-  h1 {
-    font-family: "DM Sans";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 30px;
-    letter-spacing: 4px;
-    text-decoration: underline 1px;
+const Trigger = styled.div`
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
 
-    text-decoration-color: #00ffe0;
-    text-underline-offset: 6px;
+  img {
+    transition: transform 300ms ease;
+    display: block;
   }
-  .link {
-    font-size: 15.5px;
-  }
-  .hear {
-    color: #00ffe0;
-    font-size: 26px;
-  }
-  .containerHear {
-    position: absolute;
-    margin-left: 205px;
-    margin-top: -24px;
-  }
-  .plane {
-    font-size: 30px;
-    transition: 150ms ease-in-out;
-    color: #00ffe0;
-  }
-  .plane:hover {
-    transform: scale(1.2);
-  }
-  .containerText {
-    display: flex;
-    justify-content: center;
-  }
-  .text {
-    display: flex;
-
-    width: 87%;
-  }
-
-  .ecoSportTitle {
-    line-height: 2px;
-  }
-  .textoClima {
-    line-height: 21px;
-  }
-  .containerImage {
-    z-index: 1;
-  }
-  .containerModal {
-    z-index: 2;
-    position: absolute;
-  }
-  .containerImage {
-    transition: 350ms;
-  }
-  .containerImage:hover {
-    transform: scale(1.2);
+  img:hover {
+    transform: scale(1.15);
   }
 `;
 
-const WrapperLeft = styled.div`
-  a {
-    color: white;
-    transition: 500ms;
-    font-weight: 300;
-  }
-  h3 {
+const ModalContent = styled.div`
+  .modalTitle {
     font-family: "DM Sans";
-    font-weight: 300;
-    text-align: left;
-    line-height: 22px;
-    font-size: 19px;
-  }
-  h1 {
-    font-family: "DM Sans";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 30px;
-    letter-spacing: 4px;
-    text-decoration: underline 1px;
-    text-decoration-color: #00ffe0;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 0 0 14px 0;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
     text-underline-offset: 6px;
-  }
-  .climaTitle {
-    line-height: 2px;
-  }
-  .link {
-    font-size: 15.5px;
-  }
-  .plane {
-    font-size: 30px;
-    transition: 150ms ease-in-out;
-    color: #00ffe0;
-  }
-  .plane:hover {
-    transform: scale(1.2);
-  }
-  .containerText {
-    display: flex;
-    justify-content: center;
+    text-decoration-thickness: 2px;
   }
 
-  .text {
+  .tagRow {
     display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 18px;
+  }
 
-    width: 87%;
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 12px;
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
+    border-radius: 100px;
+    font-family: "DM Sans";
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    background: rgba(var(--accent-rgb), 0.07);
+    letter-spacing: 0.3px;
   }
-  .containerImage {
-    z-index: 1;
+
+  .divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.07);
+    margin-bottom: 18px;
   }
-  .containerModal {
-    z-index: 2;
-    position: absolute;
-    left: 298px;
+
+  .bodyText p {
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 14px 0;
   }
-  .containerImage {
-    transition: 350ms;
+  .bodyText p:last-child {
+    margin-bottom: 0;
   }
-  .containerImage:hover {
-    transform: scale(1.2);
+
+  .repoBtn {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 8px 18px;
+    border: 1px solid rgba(var(--accent-rgb), 0.45);
+    border-radius: 8px;
+    background: rgba(var(--accent-rgb), 0.06);
+    color: var(--accent);
+    font-family: "DM Sans";
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 200ms ease;
+  }
+  .repoBtn:hover {
+    background: rgba(var(--accent-rgb), 0.14);
+    border-color: rgba(var(--accent-rgb), 0.7);
   }
 `;

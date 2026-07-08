@@ -32,6 +32,15 @@ export const Hamburger = () => {
             <li>Acerca de mi</li>
           </Link>
           <Link
+            to={"trayectoria"}
+            spy={true}
+            smooth={true}
+            offset={-60}
+            duration={300}
+          >
+            <li>Trayectoria</li>
+          </Link>
+          <Link
             to={"proyects"}
             spy={true}
             smooth={true}
@@ -71,7 +80,7 @@ const Nav = styled.nav`
   }
 
   #menuToggle a:hover {
-    color: #00eee0;
+    color: var(--accent);
   }
 
   #menuToggle input {
@@ -165,7 +174,7 @@ const Nav = styled.nav`
   #menu li {
     padding: 18px 12px 10px 3.5%;
     font-size: 22px;
-    border: 1px solid #00eee0;
+    border: 1px solid var(--accent);
     border-right: none;
     border-left: none;
     font-family: "Montserrat";
