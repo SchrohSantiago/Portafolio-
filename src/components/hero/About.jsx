@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { useRecruiterMode } from "../../context/RecruiterMode";
 import Yo from "../../assets/images/yo.png";
-import YoBiggest from "../../assets/images/yoBiggest.png";
 import arrow from "../../assets/images/arrow.png";
 
 export const About = () => {
@@ -14,7 +13,7 @@ export const About = () => {
           <img src={Yo} alt="Foto de Santiago Schroh" />
         </div>
         <div className="imageContainer">
-          <img src={YoBiggest} alt="Santiago Schroh" className="imgYoBiggest" />
+          <img src={Yo} alt="Santiago Schroh" className="imgYoBiggest" />
         </div>
         <div className="textContainer" id="aboutMe">
           <h1>Acerca de mí</h1>
@@ -181,6 +180,16 @@ const Wrapper = styled.div`
   .imageMobileContainer {
     filter: drop-shadow(0px 5px 7px var(--accent));
     margin-bottom: 20px;
+    width: 180px;
+    max-width: 60%;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .imageMobileContainer img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
   }
   .arrow {
     margin-left: 8px;
@@ -208,6 +217,15 @@ const Wrapper = styled.div`
       filter: drop-shadow(12px 5px 7px var(--accent));
       transition: 600ms ease-in-out;
       flex-shrink: 0;
+      width: 320px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .imageContainer img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
     }
     .imageContainer:hover {
       transform: scale(1.03);
