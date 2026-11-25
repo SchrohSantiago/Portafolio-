@@ -10,4 +10,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://schrohsantiago.github.io/sitemap.xml
+Sitemap: https://santiagoschroh.com/sitemap.xml
