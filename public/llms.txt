@@ -12,7 +12,7 @@
 - Sistema de gestión (PWA) para un gimnasio de Bahía Blanca, en producción. Stack: Python, Flask/FastAPI, React, Tailwind, SQL, JWT.
 
 ## Experiencia
-- 2 años de backend en plataformas productivas con más de 15.000 usuarios.
+- 2 años de backend en plataformas productivas de alta criticidad.
 
 ## Contacto
 - Email: schrohsanti@gmail.com
