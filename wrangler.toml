@@ -1,0 +1,13 @@
+name = "portafolio"
+compatibility_date = "2026-11-01"
+pages_build_output_dir = "./dist"
+
+# IA gratuita de Cloudflare (Workers AI) para el chat
+[ai]
+binding = "AI"
+
+# Opcional, para el limite diario por visitante:
+# crear un KV en el panel de Cloudflare y reemplazar el id.
+# [[kv_namespaces]]
+# binding = "RATE"
+# id = "REEMPLAZAR_CON_EL_ID_DEL_KV"
