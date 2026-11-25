@@ -86,3 +86,4 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
 .store .shots img:first-child{grid-column:1/-1;aspect-ratio:16/9}
 .store .shots img:hover{transform:scale(1.02)}
 @media(max-width:820px){.store .shots{order:-1}}
+.store .shots img:nth-child(n+2){aspect-ratio:16/10}
