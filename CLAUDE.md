@@ -11,14 +11,15 @@ Portfolio personal **ya existente** que quiero **mejorar estética y funcionalme
 
 **No es un proyecto desde cero.** Antes de cualquier cambio, leé el código existente, entendé la arquitectura actual y proponé mejoras **incrementales y justificadas**. No reescribas todo de golpe.
 
-### Audiencia (en orden de prioridad)
-1. Reclutadores no-técnicos de empresas medianas en Argentina, LATAM y España
-2. Hiring managers técnicos que evalúan el portfolio antes de la entrevista
-3. Consultoras de RRHH (Globant, GlobalLogic, Practia, Adecco, Hays, etc.)
-4. Clientes freelance potenciales
+### Audiencia (actualizada 2025-11-25, en orden de prioridad)
+1. Clientes potenciales (negocios que necesitan sistemas, apps o sitios)
+2. Dueños/CEOs y equipos de agencias de marketing (alianza / marca blanca)
+3. Reclutadores y hiring managers (secundario)
+
+Stack del sitio: Astro + GSAP (rama refactor-astro).
 
 ### Tono general
-Minimalista profesional. Sobrio. No "creative developer". Referencias: Stripe, Linear, Vercel, Resend. Estilo limpio, tipografía cuidada, espacios amplios, micro-interacciones sutiles.
+Actualizado: moderno e interactivo, con animaciones y efectos que impresionen, orientado a resultados y con poco texto. Debe mantener performance alta y SEO/GEO.
 
 ---
 

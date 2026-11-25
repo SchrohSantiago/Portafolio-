@@ -12,6 +12,12 @@ const services = [
   ['APIs y automatizaciones', 'Conectamos tus herramientas y automatizamos tareas repetitivas para que ganes horas por semana.'],
   ['Sitios que se encuentran', 'Landing pages veloces, con SEO técnico y datos estructurados para aparecer en Google, Bing y respuestas de IA.'],
 ];
+const agency = [
+  ['Desarrollo para tus clientes', 'Sitios, tiendas, landings y sistemas que tu agencia vende y yo construyo, con entregas claras y a tiempo.'],
+  ['Trabajo en segundo plano', 'Puedo trabajar en modalidad marca blanca: vos llevás la relación con el cliente y yo me ocupo de la parte técnica.'],
+  ['SEO técnico y velocidad', 'Sitios rápidos, con datos estructurados y listos para posicionar en buscadores y en respuestas de IA.'],
+  ['Integraciones y automatización', 'Conexión con CRM, WhatsApp, pagos y herramientas de marketing, y reportes automáticos.'],
+];
 const more = [
   ['Landing — Seguros Rivadavia', 'https://github.com/SchrohSantiago/SegurosRivadavia-Landing'],
   ['Landing — Optimus Fitness Gym', 'https://github.com/SchrohSantiago/optimusfitnessgym-landing'],
@@ -32,6 +38,7 @@ const more = [
     <ul>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#agencias">Agencias</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
@@ -106,6 +113,21 @@ const more = [
           {services.map(([t, d], i) => (
             <div class="card" data-reveal>
               <span class="n">0{i + 1}</span>
+              <h3>{t}</h3>
+              <p>{d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="agencias">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Para agencias</p>
+        <h2 data-reveal>Tu equipo de desarrollo, sin sumar sueldos.</h2>
+        <div class="grid">
+          {agency.map(([t, d]) => (
+            <div class="card" data-reveal>
               <h3>{t}</h3>
               <p>{d}</p>
             </div>
