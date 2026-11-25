@@ -68,21 +68,24 @@ const sites = [
         <p class="eyebrow" data-reveal>Proyectos</p>
         <h2 data-reveal>Menos promesas, más sistemas en producción.</h2>
 
-        <article class="feature" data-reveal>
-          <div class="vis" aria-hidden="true">
-            <span class="ring" style="width:260px;height:260px"></span>
-            <span class="ring" style="width:420px;height:420px"></span>
-            <span class="ring" style="width:600px;height:600px"></span>
-            <span class="label">Gym<br />System</span>
+        <article class="feature store gym" data-reveal>
+          <div class="shots">
+            <img src="/proyectos/gym-inicio.jpg" alt="Panel de inicio del sistema de gimnasio con ingresos y alertas" width="1350" height="682" loading="lazy" decoding="async" />
+            <img src="/proyectos/gym-clientes.jpg" alt="Listado de socios con estado de cuota y vencimiento" width="1342" height="678" loading="lazy" decoding="async" />
+            <img src="/proyectos/gym-caja.jpg" alt="Caja por turno con movimientos y resumen" width="1342" height="687" loading="lazy" decoding="async" />
+            <img src="/proyectos/gym-productos.jpg" alt="Inventario de productos con precio, costo y margen" width="1365" height="682" loading="lazy" decoding="async" />
+            <img src="/proyectos/gym-rutinas.jpg" alt="Biblioteca de rutinas de entrenamiento" width="1341" height="708" loading="lazy" decoding="async" />
           </div>
           <div class="body">
-            <p class="eyebrow">Proyecto destacado</p>
-            <h3>Sistema de gestión para gimnasio</h3>
-            <p style="color:var(--mut)">PWA completa para un gimnasio de Bahía Blanca: del problema real al producto en uso.</p>
+            <p class="eyebrow">Proyecto destacado · Sistema en producción</p>
+            <h3>Tu Gimnasio Virtual</h3>
+            <p style="color:var(--mut)">Sistema de gestión para gimnasios, creado a partir de un caso real en Bahía Blanca: socios, cuotas, caja, productos y rutinas en un solo lugar.</p>
             <ul class="facts">
+              <li>Socios con estado de cuota (al día, por vencer, vencidos) y seguimiento de pagos</li>
+              <li>Caja por turno, venta de productos e inventario con costo y margen</li>
+              <li>Biblioteca de rutinas, ingreso por DNI en recepción y varias sucursales</li>
+              <li>Equipo con roles y permisos, y color de marca configurable</li>
               <li>En producción y en uso por el cliente</li>
-              <li>Producto propio: backend, frontend y despliegue</li>
-              <li>Instalable en el celular, con acceso protegido por autenticación (JWT)</li>
             </ul>
             <ul class="tags"><li>Python</li><li>Flask · FastAPI</li><li>React</li><li>Tailwind</li><li>SQL</li><li>JWT</li></ul>
             <a class="btn" href="https://github.com/SchrohSantiago/GymSystem-releases" target="_blank" rel="noopener">Ver versiones ↗</a>
