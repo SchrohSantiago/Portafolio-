@@ -18,11 +18,12 @@ const agency = [
   ['SEO técnico y velocidad', 'Sitios rápidos, con datos estructurados y listos para posicionar en buscadores y en respuestas de IA.'],
   ['Integraciones y automatización', 'Conexión con CRM, WhatsApp, pagos y herramientas de marketing, y reportes automáticos.'],
 ];
-const more = [
-  ['Landing — Seguros Rivadavia', 'https://github.com/SchrohSantiago/SegurosRivadavia-Landing'],
-  ['Landing — Optimus Fitness Gym', 'https://github.com/SchrohSantiago/optimusfitnessgym-landing'],
-  ['Inventario y e-commerce', 'https://github.com/SchrohSantiago/inventory-ecommerce'],
-  ['SaaS para peluquerías', 'https://github.com/SchrohSantiago/saas-peluqueria'],
+const sites = [
+  ['Viajes de estudio de inglés', 'Sitio institucional con asesoramiento por WhatsApp', '/proyectos/viajes-estudio.jpg', 'https://www.englishbound.com.ar/', 'https://www.instagram.com/englishbound_/'],
+  ['Alquiler de quincho con pileta', 'Sitio de reservas con galería, precios y consulta directa', '/proyectos/quincho.jpg', 'https://www.quinchoparaiso.com/', null],
+  ['Gimnasio', 'Sitio con planes, instalaciones y contacto directo', '/proyectos/gimnasio-web.jpg', 'https://www.optimus-fitness-gym.com/', 'https://www.instagram.com/optimus_fitness_gym/'],
+  ['Cabaña turística en Mar del Plata', 'Sitio ilustrado con galería, ubicación y reservas', '/proyectos/cabana.jpg', 'https://terraventuscomplejo.com/', 'https://www.instagram.com/terraventus.complejo/'],
+  ['Asesoría de seguros', 'Sitio con cotizador y contacto por WhatsApp', '/proyectos/seguros.jpg', 'https://www.ases-integral.com/', null],
 ];
 ---
 <Layout
@@ -94,13 +95,21 @@ const more = [
           <div class="stat"><b>En producción</b><span>sistema propio de punta a punta para un gimnasio de Bahía Blanca</span></div>
         </div>
 
-        <div class="grid">
-          {more.map(([t, u]) => (
-            <a class="card" href={u} target="_blank" rel="noopener" data-reveal>
-              <span class="n">Código en GitHub ↗</span>
-              <h3>{t}</h3>
-            </a>
+        <h3 class="sub" data-reveal>Sitios web en producción</h3>
+        <div class="grid sites">
+          {sites.map(([t, d, img, url, ig]) => (
+            <article class="site" data-reveal>
+              <a href={url} target="_blank" rel="noopener" aria-label={`${t}: ver sitio en vivo`}>
+                <img src={img} alt={`Captura del sitio: ${t}`} width="800" height="600" loading="lazy" decoding="async" />
+              </a>
+              <div class="info">
+                <h3>{t}</h3>
+                <p>{d}</p>
+                <p class="links"><a href={url} target="_blank" rel="noopener">Ver sitio ↗</a>{ig && <a href={ig} target="_blank" rel="noopener">Instagram ↗</a>}</p>
+              </div>
+            </article>
           ))}
+        </div>
         </div>
       </div>
     </section>
