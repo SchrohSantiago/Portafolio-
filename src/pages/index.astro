@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { contact } from '../data/contact.js';
+import '../styles/global.css';
+
+const wa = `https://wa.me/${contact.whatsapp}?text=` + encodeURIComponent('Hola Santiago, vi tu portafolio y quiero consultarte por un proyecto.');
+const words = ['Software', 'a medida', 'que hace', 'crecer', 'tu negocio.'];
+const stack = ['Python', 'FastAPI', 'Flask', 'React', 'PWA', 'SQL', 'MongoDB', 'Docker', 'CI/CD', 'SEO técnico'];
+const services = [
+  ['Sistemas de gestión', 'Turnos, socios, pagos, stock. Reemplazamos planillas y papeles por un sistema que tu equipo usa todos los días.'],
+  ['Apps web y PWA', 'Se instalan en el celular, funcionan rápido y no dependen de una tienda de aplicaciones.'],
+  ['APIs y automatizaciones', 'Conectamos tus herramientas y automatizamos tareas repetitivas para que ganes horas por semana.'],
+  ['Sitios que se encuentran', 'Landing pages veloces, con SEO técnico y datos estructurados para aparecer en Google, Bing y respuestas de IA.'],
+];
+const more = [
+  ['Landing — Seguros Rivadavia', 'https://github.com/SchrohSantiago/SegurosRivadavia-Landing'],
+  ['Landing — Optimus Fitness Gym', 'https://github.com/SchrohSantiago/optimusfitnessgym-landing'],
+  ['Inventario y e-commerce', 'https://github.com/SchrohSantiago/inventory-ecommerce'],
+  ['SaaS para peluquerías', 'https://github.com/SchrohSantiago/saas-peluqueria'],
+];
+---
+<Layout
+  title="Santiago Schroh — Desarrollo de software a medida en Bahía Blanca"
+  description="Desarrollo sistemas de gestión, apps web/PWA, APIs y sitios optimizados para SEO. Python y React. Bahía Blanca, Argentina; trabajo remoto en toda LATAM y España."
+>
+  <script is:inline>document.documentElement.classList.add('js')</script>
+  <a class="skip" href="#proyectos">Ir al contenido</a>
+  <div class="glow" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+
+  <nav aria-label="Principal">
+    <a class="logo" href="#top">SS<span style="color:var(--acc)">.</span></a>
+    <ul>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <p class="badge"><span class="dot"></span>Disponible · Bahía Blanca y remoto</p>
+      <h1 aria-label="Software a medida que hace crecer tu negocio.">
+        {words.map((w, i) => (
+          <span class="line" aria-hidden="true"><span class="word" set:html={i === 3 ? `<em>${w}</em>` : w} /></span>
+        ))}
+      </h1>
+      <p class="lead">Soy Santiago, desarrollador. Diseño y programo sistemas, apps y sitios que ya funcionan en producción, con foco en velocidad, posicionamiento y resultados.</p>
+      <div class="cta">
+        <a class="btn primary" href={wa} target="_blank" rel="noopener">Contame tu proyecto ↗</a>
+        <a class="btn" href="#proyectos">Ver proyectos</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="marquee" aria-hidden="true"><div class="track">{stack.map((s) => <span>{s}</span>)}</div></div>
+
+  <main>
+    <section id="proyectos">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Proyectos</p>
+        <h2 data-reveal>Menos promesas, más sistemas en producción.</h2>
+
+        <article class="feature" data-reveal>
+          <div class="vis" aria-hidden="true">
+            <span class="ring" style="width:260px;height:260px"></span>
+            <span class="ring" style="width:420px;height:420px"></span>
+            <span class="ring" style="width:600px;height:600px"></span>
+            <span class="label">Gym<br />System</span>
+          </div>
+          <div class="body">
+            <p class="eyebrow">Proyecto destacado</p>
+            <h3>Sistema de gestión para gimnasio</h3>
+            <p style="color:var(--mut)">PWA completa para un gimnasio de Bahía Blanca: del problema real al producto en uso, comercializado y mantenido.</p>
+            <ul class="facts">
+              <li>En producción y en uso diario por el cliente</li>
+              <li>Producto propio: backend, frontend y despliegue</li>
+              <li>Instalable en el celular, con acceso seguro por roles</li>
+            </ul>
+            <ul class="tags"><li>Python</li><li>Flask · FastAPI</li><li>React</li><li>Tailwind</li><li>SQL</li><li>JWT</li></ul>
+            <a class="btn" href="https://github.com/SchrohSantiago/GymSystem-releases" target="_blank" rel="noopener">Ver versiones ↗</a>
+          </div>
+        </article>
+
+        <div class="stats" data-reveal>
+          <div class="stat"><b data-count="15000" data-suffix="+">15.000+</b><span>usuarios en plataformas productivas en las que trabajo</span></div>
+          <div class="stat"><b data-count="2" data-suffix=" años">2 años</b><span>desarrollando backend en sistemas críticos</span></div>
+          <div class="stat"><b data-count="4">4</b><span>ambientes y releases a producción coordinados</span></div>
+        </div>
+
+        <div class="grid">
+          {more.map(([t, u]) => (
+            <a class="card" href={u} target="_blank" rel="noopener" data-reveal>
+              <span class="n">Código en GitHub ↗</span>
+              <h3>{t}</h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Servicios</p>
+        <h2 data-reveal>Lo que puedo construir para vos.</h2>
+        <div class="grid">
+          {services.map(([t, d], i) => (
+            <div class="card" data-reveal>
+              <span class="n">0{i + 1}</span>
+              <h3>{t}</h3>
+              <p>{d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Contacto</p>
+        <h2 data-reveal>¿Hablamos de tu proyecto?</h2>
+        <div class="cta" data-reveal>
+          <a class="btn primary" href={wa} target="_blank" rel="noopener">Escribime por WhatsApp ↗</a>
+          <a class="btn" href="/curriculumSchroh.pdf" download>Descargar CV</a>
+        </div>
+        <a class="big" href={`mailto:${contact.email}`} data-reveal>{contact.email}</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© {new Date().getFullYear()} Santiago Schroh · Bahía Blanca, Argentina</span>
+      <span><a href={contact.github} rel="noopener">GitHub</a> · <a href={contact.linkedin} rel="noopener">LinkedIn</a></span>
+    </div>
+  </footer>
+
+  <script>import '../scripts/animations.js';</script>
+</Layout>

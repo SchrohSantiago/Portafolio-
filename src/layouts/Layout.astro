@@ -1,0 +1,62 @@
+---
+import { contact } from '../data/contact.js';
+const { title, description } = Astro.props;
+const site = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const url = site + '/';
+
+// Datos estructurados: ayudan a Google, Bing y buscadores de IA a entender quién sos y qué ofrecés.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': url + '#persona',
+      name: 'Santiago Schroh',
+      jobTitle: 'Desarrollador de software',
+      url,
+      email: 'mailto:' + contact.email,
+      telephone: contact.phone,
+      address: { '@type': 'PostalAddress', addressLocality: 'Bahía Blanca', addressRegion: 'Buenos Aires', addressCountry: 'AR' },
+      sameAs: [contact.github, contact.linkedin],
+      knowsAbout: ['Python', 'FastAPI', 'Flask', 'React', 'PWA', 'APIs REST', 'SQL', 'MongoDB', 'Automatización', 'SEO técnico'],
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': url + '#servicio',
+      name: 'Santiago Schroh — Desarrollo de software a medida',
+      url,
+      areaServed: [{ '@type': 'City', name: 'Bahía Blanca' }, { '@type': 'Country', name: 'Argentina' }],
+      founder: { '@id': url + '#persona' },
+      serviceType: ['Sistemas de gestión a medida', 'Aplicaciones web y PWA', 'APIs y automatizaciones', 'Sitios web optimizados para SEO'],
+    },
+    { '@type': 'WebSite', '@id': url + '#web', url, name: 'Santiago Schroh', inLanguage: 'es-AR' },
+  ],
+};
+---
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Santiago Schroh" />
+    <link rel="canonical" href={url} />
+    <meta name="theme-color" content="#07070a" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

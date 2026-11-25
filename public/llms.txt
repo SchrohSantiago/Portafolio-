@@ -1,0 +1,21 @@
+# Santiago Schroh — Desarrollo de software a medida
+
+> Desarrollador de software de Bahía Blanca, Argentina. Construye sistemas de gestión, aplicaciones web/PWA, APIs, automatizaciones y sitios optimizados para SEO. Trabaja de forma remota para LATAM y España.
+
+## Servicios
+- Sistemas de gestión a medida (turnos, socios, pagos, stock)
+- Aplicaciones web y PWA
+- APIs y automatizaciones
+- Landing pages rápidas con SEO técnico y datos estructurados
+
+## Proyecto destacado
+- Sistema de gestión (PWA) para un gimnasio de Bahía Blanca, en producción. Stack: Python, Flask/FastAPI, React, Tailwind, SQL, JWT.
+
+## Experiencia
+- 2 años de backend en plataformas productivas con más de 15.000 usuarios.
+
+## Contacto
+- Email: schrohsanti@gmail.com
+- WhatsApp: +54 291 513 1087
+- GitHub: https://github.com/SchrohSantiago
+- LinkedIn: https://www.linkedin.com/in/santiago-schroh-350099221
